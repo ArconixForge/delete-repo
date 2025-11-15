@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  qe-dashboard-frontend:
+    # Build the image from the Dockerfile in the current directory
+    build:
+      context: .
+      args:
+        # Pass this variable TO the Dockerfile during the build
+        - NEXT_PUBLIC_API_BASE_URL=https://gcp.psai.dev/qe-orchestrator/api/logs/stream
+    container_name: qe-dashboard-frontend
+    ports:
+      # Map host port 3000 to container port 3000
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      # This is still good to have for the "runner" stage
+      - NEXT_PUBLIC_API_BASE_URL=https://gcp.psai.dev/qe-orchestrator/api/logs/stream
