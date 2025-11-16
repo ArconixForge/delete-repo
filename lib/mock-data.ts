@@ -818,7 +818,7 @@ function createRunningPipeline(testRunId: string): TestPipeline {
 
 export const mockTeams: Team[] = [
   {
-    id: "team-1",
+    id: "QEA",
     name: "Mobile Banking Team",
     description: "iOS and Android mobile banking applications",
     project: "Retail Banking Platform",
